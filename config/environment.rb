@@ -7,8 +7,6 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 
-require 'pry'
-
 require 'net/http'
 
 require 'geocoder'
