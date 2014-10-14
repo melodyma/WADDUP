@@ -1,4 +1,4 @@
-e<h2>WADDUP</h2>
+<h2>WADDUP</h2>
 
 <h3>About</h3>
 WADDUP is an event aggregator app complete with nyan unicorns and cats. The events are pulled from the Eventbrite and New York Times APIs. The technology stack used for this project was:
