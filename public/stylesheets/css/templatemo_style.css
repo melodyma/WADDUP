@@ -1,0 +1,274 @@
+.content-container {
+	box-sizing: border-box;
+	max-width: 1170px;
+	width: 100%;
+	padding: 15px;
+}
+.content { padding-top: 15px; }
+
+ul.pad-left {	
+	overflow: auto;	
+	padding-left: 30px;	
+	line-height: 1.8em; 
+}
+img.shadow { box-shadow: 5px 10px 10px -5px rgba(0,0,0,0.5); }
+
+.templatemo-detail img { 
+	max-width: 250px; 
+	width: 100%; 
+	height: auto;
+	margin-right: 15px;	
+	margin-bottom: 15px; 
+}
+.fa { margin: 6px; }
+.left { float: left; }
+.right { float: right; }
+.center-text { text-align: center; }
+
+/* 3. Portfolio styles
+-----------------------------------------*/
+#portfolio-content {
+
+  padding: 10px;
+	display:-webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.portfolio-group .detail .eventbrite{
+  height: 40px; 
+  width: auto;
+  bottom:0; 
+  right:0; 
+  padding:1px 10px 7px 1px;
+  backface-visibility:hidden;
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.portfolio-group .detail .newyorktimes{
+	height:auto; 
+	width:60%; 
+	bottom:0; 
+	right:0; 
+	padding:1px 12px 10px 1px;
+	backface-visibility:hidden;
+	box-shadow: 0px 0px 0px 0px;
+}
+
+.title-wrapper img { 
+	width: 250px; 
+	height: 250px;
+}
+
+
+.portfolio-group {
+	display: inline-block;
+	width: 250px;
+	height: 350px;
+	position: relative;
+	margin: 10px 10px;
+	text-align: center;
+	float: left;
+}
+.portfolio-group img {
+	width:100%;
+	height:100%;
+	position:absolute;
+	display:block;
+	box-shadow: 5px 10px 10px -5px rgba(0,0,0,0.5);
+	border-radius: 3px;
+}
+.portfolio-group .detail {
+	border-top: 6px solid $sidebar-color;
+	display:block;
+	width:100%;
+	height:100%;	
+	position:absolute;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 5px 10px 10px -5px rgba(0,0,0,0.5);
+	border-radius: 3px;
+}
+
+.portfolio-group .detail p {
+	text-align: center;
+	padding: 5px;
+	line-height: 1.3em;
+	overflow: hidden;
+	color: black;
+	font-weight: 300;
+}
+
+.portfolio-item-wrapper {
+	position: relative;
+	height: 250px;
+	overflow: auto;
+  word-wrap:break-word;
+}
+.portfolio-item { 
+	border-radius: 20px;
+	display:block; 
+	width:100%; 
+	height:100%; 
+}
+.portfolio-item .btn {
+	width: 80px;
+	height: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.09);
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.44);
+	-ms-box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.44);
+	box-shadow: 1px 1px 1px rgba(51, 51, 51, 0.44);
+}
+.portfolio-item .btn:hover { background-color: #ddd; }
+.pagination { width: 100%; }
+.pagination li {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;	
+	background-color: white;
+	-webkit-box-shadow: 1px 1px 1px rgba(51,51,51,0.4);
+	-ms-box-shadow: 1px 1px 1px rgba(51,51,51,0.4);
+	box-shadow: 1px 1px 1px rgba(51,51,51,0.4);
+	margin-right: 10px;
+	border: 1px solid rgba(44, 44, 44, 0.1);
+}
+.pagination li:last-child {	margin-right: 0; }
+.pagination li.active, .pagination li:hover { background-color: #A7DDFF; }
+
+/*  4. CSS3 flip
+	http://stackoverflow.com/questions/13474210/css3-3d-flip-animation-ie10-transform-origin-preserve-3d-workaround
+	http://www.cssplay.co.uk/menu/css3-3d-card.html
+	http://cssdeck.com/labs/gddxuzki
+-------------------------------------------------------------------------------------*/
+.portfolio-group .portfolio-item img,  .portfolio-group .portfolio-item .detail {
+	-webkit-transition:0.5s ease-in-out;
+	-moz-transition:0.5s ease-in-out;
+	transition:0.5s ease-in-out;
+}
+.portfolio-group .detail {
+	-moz-transform:perspective(800px) rotateY(180deg);
+	-webkit-transform:perspective(800px) rotateY(180deg);
+	transform:perspective(800px) rotateY(180deg);
+}
+.detail{
+	padding: 20px;
+	height: 100%;
+	width: 100%;
+}
+.portfolio-group .portfolio-item img {
+	-moz-transform:perspective(800px) rotateY(0deg);
+	-webkit-transform:perspective(800px) rotateY(0deg);
+	transform:perspective(800px) rotateY(0deg);
+}
+.portfolio-item:hover > .detail {
+	-moz-transform:perspective(800px) rotateY(0);
+	-webkit-transform:perspective(800px) rotateY(0);
+	transform:perspective(800px) rotateY(0);	
+}
+.portfolio-item:hover > img {
+	-webkit-transform:perspective(800px) rotateY(-179.9deg);
+	-moz-transform:perspective(800px) rotateY(-179.9deg);
+	transform:perspective(800px) rotateY(-179.9deg);	
+}
+.portfolio-group img, .portfolio-group .detail, .portfolio-group .detail .newyorktimes, .portfolio-group .detail .eventbrite {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+
+/* 7. Media queries 
+-----------------------------------------------------*/
+@media screen and (max-width: 980px) {
+	.templatemo_contactmap { 
+		width: 100%; 
+		max-width: 600px; 
+		margin-left: auto; 
+		margin-right: auto;
+		padding: 0;
+		float: none;
+	}
+	form {	
+		float: none;
+		max-width: 600px; 
+		width: 100%;
+		margin: 15px auto;
+	}
+}
+@media screen and (max-width: 806px) and (min-width: 701px) {
+	#logo {
+		float: none;
+		text-align: center;
+	}
+	.main-nav ul { float: none;	}
+}
+@media screen and (max-width: 700px) {
+	#logo {
+		float: none;
+		text-align: center;
+	}
+	.main-nav ul {
+		display: block;
+		float: none;
+		padding: 0;
+	}
+	.main-nav ul.nav li {
+		width: 96%;
+
+	}
+	.main-nav ul.nav li a { padding: 2%; }
+	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
+	.main-nav ul.nav li a:hover { padding: 2%; }
+
+	header {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	h1 { margin-top: 0;	}
+	h2 { margin-bottom: 20px; }
+	form {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 600px) {
+	.about-detail ul { padding-left: 20px;	}
+	img.left {
+		float: none;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	footer p {
+		float: right;
+		margin-bottom: 15px;
+	}
+	.social { clear: both; }
+}
+@media screen and (max-width:480px) {
+	.main-nav li { 
+		margin-left: 0; 
+		margin-right: 0;	
+	}
+	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
+}
+@media screen and (max-width:400px) {
+	.main-nav li {
+		width: 80px;
+	    margin-left: 0;
+	    margin-right: 0;
+	    font-size: 12px;
+	    text-align: center;
+	    line-height: 30px;
+	}
+	.main-nav ul.nav li a { padding: 2%; }
+	.main-nav ul.nav li.active { padding: 0; padding: 2% 0; }
+	.main-nav ul.nav li a:hover { padding: 2%; }
+}

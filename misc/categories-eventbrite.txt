@@ -1,0 +1,39 @@
+# eventbrite categories 
+# example where
+  # category short_name = "Business"
+  # and subcategory name = "Startups & Small Business"
+
+{
+    "resource_uri": "https://www.eventbriteapi.com/v3/categories/101/", 
+    "id": "101", 
+    "name": "Business & Professional", 
+    "name_localized": "Business & Professional", 
+    "short_name": "Business", 
+    "subcategories": [
+        {
+            "resource_uri": "https://www.eventbriteapi.com/v3/subcategories/1001/", 
+            "id": "1001", 
+            "name": "Startups & Small Business"
+        }, 
+
+Categories: (id, short_name)
+101, Business
+102, Science & Tech
+103, Music
+104, Film & Media
+105, Arts
+106, Fashion
+107, Health
+108, Sports & Fitness
+109, Travel & Outdoor
+110, Food & Drink
+111, Charity & Causes
+112, Government
+113, Community
+114, Spirituality
+115, Family & Education
+116, Holiday
+117, Home & Lifestyle
+118, Auto, Boat & Air
+119, Hobbies
+199, Other

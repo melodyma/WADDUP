@@ -1,0 +1,50 @@
+<% if @fetched_events %>
+<div class="newyork col-md-10 col-md-offset-2">
+  <div class="content-container">
+    <div id="portfolio-content" class="center-text">
+      <div class="portfolio-page" id="page-1">
+      <% @events.each do |event| %>
+        <div class="portfolio-group">
+          <div class="title-wrapper">
+            <% title = event[:title].split(' ') %>
+            <% if event[:description] %>
+              <% returned_description = event[:description].split('') %>
+              <% description = returned_description[0..100].join() %>
+            <% else %>
+              <% description = "no description provided" %>
+            <% end %>
+            <% if event[:start_date_time] %>
+              <% returned_date_time = event[:start_date_time].split('') %>
+              <% date_time = returned_date_time[0..60].join() %>
+            <% else %>
+              <% date_time = "no date provided" %>
+            <% end %>
+            <% if event[:venue_address_1] %>
+              <% returned_address = event[:venue_address_1].split('') %>
+              <% address = returned_address[0..100].join() %>
+            <% else %>
+              <% address = "no address provided" %>
+            <% end %>
+            <h3><a class="event_title" href="<%= event[:event_uri] %>" target="_blank"><%= title[0..6].join(" ") %></a></h3>
+          </div>
+        
+          <div class="item-wrapper">
+            <a class="portfolio-item">
+            <img class="cover" src="<%= event[:picture] %>"/>
+            <div class="detail">  
+              <p><%= description %>...</p>
+              <hr>
+              <p class="date-time"><%= date_time %></p>
+              <p class="address"><%= address %>, <%= event[:venue_city] %></p>
+              <p class="event-source">Source: <%=event[:origin]%></p>
+            </div>
+            </a>  
+          </div>
+        </div>
+      <% end %>  
+    </div>
+  </div> 
+</div>
+<% else %>
+  <div class="hero-background"></div>
+<% end %>    

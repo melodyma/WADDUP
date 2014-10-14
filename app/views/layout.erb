@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheets/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:700,400,500,300,100,PT+Mono' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/css/templatemo_style.css">
+  <link rel="stylesheet" href="/stylesheets/css/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/javascript/js/bootstrap.js"></script>
+  <script src="/javascript/js/style.js"></script>
+  <title>WADDUP</title>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header test">
+      <a href="/"><img class="logo" src="assets/logo.png" height="50" width="auto"></a>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="btn-group col-md-2 sidebar">
+      <form role="form" method="get" action="search">
+        
+        <label class="form_labels" for="address">Location</label>
+        <input type="text" name="address" class="form-control labels" id="address" value="New York">
+        
+        <label class="form_labels" for="distance">Distance</label>
+        <span id="range"> &nbsp<%=params[:range_in_km]%></span><span> km</span>
+        <input type="range" name="range_in_km" id="distance" class="labels" value=<%=params[:range_in_km]%> min="0" max="10" onchange="showValue(this.value);">
+
+        <label class="form_labels" for="startdate">Start Date</label>
+        <input type="date" name="start_date" class="form-control labels" id="startdate" value=<%= params[:start_date]%>>
+        
+        <label class="form_labels" for="enddate">End Date</label>
+        <input type="date" name="end_date" class="form-control labels" id="enddate"
+        value=<%= params[:end_date]%>>
+
+        <div class="radio">
+          <input type="radio" name="categories" id="option2" value="2" checked><label for="option2" unselectable>Charities & Causes</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option8" value="8"><label for="option8" unselectable>Family</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option5" value="5">
+          <label for="option5" unselectable>Film</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option3" value="3"><label for="option3" unselectable>Food & Drink</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option7" value="7">
+          <label for="option7" unselectable>Hobbies</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option1" value="1"><label for="option1" unselectable>Music</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option4" value="4">
+          <label for="option4" unselectable>Performing Arts</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" name="categories" id="option6" value="6">
+          <label for="option6" unselectable>Sports</label><br>
+        </div>
+        <input class="btn btn-primary" type="submit" id="waddup-btn" value="SHOW ME THE FUN">
+      </div>
+    </form>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
